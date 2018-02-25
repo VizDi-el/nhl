@@ -4,24 +4,32 @@ import {
   Text,
   StyleSheet,
   Button,
-  Title
+  Title,
+  row
 } from 'react-native';
 
 const Buttons = () => {
     return (
       <View style={buttonContainer}>
-        <Button>
-            title="tekstiä"
+        <View Button style={styles.button}
+            title="tekstiä">
         </Button>
+        <Button
+            title="Tekstiä2">
+        </Button>
+      <Button
+          title="Tekstiä3">
+      </Button>
       </View>
     )
   }
   
   const styles = StyleSheet.create({
     buttonContainer: {
-      display: "flex",
-      marginTop: 55,
+      flex: 1,
+      flexDirection: row,
       alignItems: "center",
+      justifyContent: 'space-between'
     },
     button: {
       fontWeight: "bold",
