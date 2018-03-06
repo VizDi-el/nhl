@@ -9,35 +9,39 @@ import {
 } from 'react-native';
 
 const Buttons = () => {
-    return (
-      <View style={buttonContainer}>
-        <View Button style={styles.button}
-            title="tekstiä">
-        </Button>
-        <Button
-            title="Tekstiä2">
-        </Button>
-      <Button
-          title="Tekstiä3">
-      </Button>
+  return (
+    <View style={buttonContainer}>
+      <View style ={styles.buttonRow}>
+        <Button title="teksti"/>
+        <Button title="teksti"/>
       </View>
-    )
+
+      <View style={styles.button2}>
+        <Button
+          title="Tekstiä3">
+        </Button>
+      </View>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    flexDirection: 'column'
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  button1:{
+    width:'49%'
+  },
+  button2:{
+    width:'100%'
   }
-  
-  const styles = StyleSheet.create({
-    buttonContainer: {
-      flex: 1,
-      flexDirection: row,
-      alignItems: "center",
-      justifyContent: 'space-between'
-    },
-    button: {
-      fontWeight: "bold",
-      fontSize: 20,
-    }
-  })
-  
-  const {buttonContainer, button} = styles;
-  
-  
-  export default Buttons;
+})
+
+const { buttonContainer, button } = styles;
+
+
+export default Buttons;
