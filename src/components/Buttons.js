@@ -6,7 +6,8 @@ import {
   Button,
   Title,
   row,
-  TouchableOpacity
+  TouchableOpacity,
+  date
 } from 'react-native';
 
 import { Calendar } from 'react-native-calendars';
@@ -16,7 +17,8 @@ export default class Buttons extends Component {
   constructor() {
     super()
     this.state = {
-      isHidden: true
+      isHidden: true,
+      date: null
     }
   }
   toggleHidden() {
@@ -32,7 +34,12 @@ export default class Buttons extends Component {
           current={'2018-03-09'}
           minDate={'2012-05-10'}
           maxDate={'2030-03-09'}
-          onDayPress={(day) => { console.log('selected day', day) }}
+          onDayPress={(date) => this.onSelect( date ) }
+
+          monthFormat={'dd.MM.yyyy'}
+          hideArrows={true}
+          renderArrow={(direction) => (<Arrow />)}
+          firstDay={1}
         />}
         <View style={styles.buttonRow}>
           <TouchableOpacity
